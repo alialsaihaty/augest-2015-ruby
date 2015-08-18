@@ -1,0 +1,46 @@
+
+<h1>Please enter your name ...</h1>
+
+
+<form action="/submit_index" method="post">
+  <input type="text" placeholder="Your Full Name" name="full_name">
+  <input type="submit">
+</form>
+<hr>
+<% if @name %>
+  Hi <%= @name %> Welcome
+<% end %>
+
+<br>
+<br>
+<br>
+<hr>
+
+<h1>Please enter two differet numbers ...</h1>
+<h3>This game will print the numbers from 1 to 100 replacing the numbers that are divisible by Number1 with "Fizz" and the numbers that are divisible by Number2 "Buzz" and the numbers that are divisible by Number1 and Number2 "FizzBuzz"</h3>
+
+<form action="/submit_num" method="post">
+  <input type="text" placeholder="Insert Num 1" name="full_num1">
+  <input type="text" placeholder="Insert Num 2" name="full_num2">
+  <input type="submit">
+</form>
+
+<% if @num1 && @num2 %>
+
+<% counter = 1 %>
+<% array = [] %>
+<% while counter < 101  do%>
+ <%  if counter % @num1 == 0 &&  counter % @num2 == 0 %>
+      "FizzBuzz"
+  <%  elsif counter % @num1 == 0 %>
+      "Fizz"
+  <%  elsif counter % @num2 == 0 %>
+      "Buzz"
+  <%   else    %>
+     <%= counter %>
+  <%  end    %>
+<% counter += 1 %>
+<%  end %>
+<%=  array %>
+
+<% end %>

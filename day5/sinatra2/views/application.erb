@@ -1,0 +1,48 @@
+<!-- This is a layout file -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My First Sinatra Application</title>
+    <style>
+      body{
+        background-color:<%=@color%>;
+      }
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/">Home</a>
+        |
+        <a href="/contact">Contact Us</a>
+        |
+        <a href="/convert_temp">Covert Temperature</a>
+        |
+        <a href="/survey">Survey</a>
+        |
+        <a href="/company">Company</a>
+        |
+        <a href="/random">Random</a>
+        |
+        The last Winner was: <%= session[:the_last_winner] %>
+        |
+        You have visited home Page: <%= session[:visits] %> time(s)
+        |
+        <form action="/change_color" id="colors" method="post">
+          <select name="colors" form="colors">
+            <option value="red" name="red">Red</option> <%= session[:red] %>
+            <option value="blue" name="blue">Blue</option> <%= session[:blue] %>
+            <option value="yellow" name="yellow">Yellow</option> <%= session[:yellow] %>
+          </select>
+          <input type="submit">
+        </form>
+        <br>
+      </nav>
+    </header>
+    <hr>
+    <%# the yield will get replaced by the contact of each template that is using this layout. For instance the content of index.erb will be injected in place of this `yield` %>
+    <%= yield %>
+  </body>
+</html>

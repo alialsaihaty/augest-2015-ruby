@@ -11,3 +11,5 @@ counter = 1
     puts "#{" " * (num - counter)}#{'O '* counter }"
     counter +=1
   end
+
+#

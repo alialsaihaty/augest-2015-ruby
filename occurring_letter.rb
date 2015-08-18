@@ -2,7 +2,33 @@
 
 puts "Please write any Word ?"
 
-wor = gets.chomp
+sentence = gets.chomp
+
+#
+characters = sentence.chars
+
+hash = Hash.new(0)
+
+characters.each do |letter|
+  hash[letter] += 1
+end
+
+print hash.sortby {|k, v| v }
+puts hash.sortby {|k, v| v }.last[0]
+
+
+
+
+
+
+#a = letters.index('l')
+#puts a
+
+
+
+
+
+=begin
 c = wor.length
 d = c - 1
  while 0 < c
@@ -11,3 +37,4 @@ d = c - 1
    d -= 1
  end
 ˜
+=end

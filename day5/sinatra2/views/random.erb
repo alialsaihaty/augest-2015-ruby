@@ -1,0 +1,14 @@
+<h1>Pick Random</h1>
+
+<form action="/random" method="post">
+  <input type="text" name="pick_ran" value="<%= @nam %>" placeholder="write names" style="height: 100px; width: 350px">
+  <input type="submit">
+
+</form>
+
+
+
+
+<% if @ra %>
+  <h2>The Winner is <h1 style=" font-size: 60px; color:red"><%= @ra %></h1></h2>
+<% end %>
